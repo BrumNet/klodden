@@ -98,12 +98,14 @@ OrderInfo(this.price, this.minDeposit, this.material, this.color, this.style, th
                                 }, label: Text('Make Deposit'), icon: Icon(Icons.shopping_cart)) ,
                                 //Expanded(child:  Container()),
                                  TextButton.icon(onPressed:  (){
-                                   //showDialog(barrierDismissible: false,context: context, builder:(context){ return AlertDialog( content: OrderInfo(), ) ;});
-                                }, label: Text('Proceed to Order'), icon: Icon(Icons.shopping_cart)) ,
+
+                                  }, label: Text('Proceed to Order'), icon: Icon(Icons.shopping_cart)) ,
                             ],) 
                             :Row( // mainAxisSize: MainAxisSize.min, 
                             children: [ 
                                TextButton.icon(onPressed:  (){
+                                 uploadRedCust('id');
+                                 uploadRedTail('id');
                                    //showDialog(barrierDismissible: false,context: context, builder:(context){ return AlertDialog( content: OrderInfo(), ) ;});
                                 }, label: Text('Make Deposit'), icon: Icon(Icons.shopping_cart)) ,
                                 Expanded(child:  Container()),

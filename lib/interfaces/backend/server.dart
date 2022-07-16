@@ -36,3 +36,29 @@ connectFav() async {
                           });
 }
 
+uploadRedCust(id) async {
+   await FirebaseFirestore.instance
+                            .collection('Info')
+                            .doc('Client')///replace with username
+                            .set(
+                            { 
+                              'tailor': 'tailorsusername',
+                              'id': id,
+                              'clothimage':''
+                              }
+                          ).catchError((e) {//s = 'Error';
+                          });
+}
+
+uploadRedTail(id) async {
+   await FirebaseFirestore.instance
+                            .collection('Info')
+                            .doc('Client')//Replace with tailor username
+                            .set(
+                            { 
+                              'clothid': id, 
+                              'client':'clientusername'
+                              }
+                          ).catchError((e) {//s = 'Error';
+                          });
+}
